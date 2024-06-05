@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Idea Contest</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-image: url('/static/background.jpg'); /* Replace 'background.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }        
+        .logo {
+            width: 300px; /* Adjust the width as needed */
+            height: auto;
+            position: absolute;
+            top: 60px;
+            left: 40px;
+        }
+        .container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            margin-left: 60px;
+            margin-right: auto;
+            max-right: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Courier Prime', monospace;
+            color: #000000;
+        }
+        .left-content {
+            position: absolute;
+            text-align: auto;
+            width: 300px;
+            top: 260px;
+            left: 80px;
+            color: white;
+            word-spacing: 5px;
+            line-height: 1.5;
+            font-family: 'Courier Prime', monospace;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+    <header>
+    
+    <div class="left-content">
+        <p><span id="typingEffect"></span></p>
+    </div>  
+    
+    <div class="container">
+        <h1>Startup Innovation Contest</h1>
+        <p style="font-size: 20px";><b>Your chance to win up to N500,000</b></p>
+        <form id="submissionForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="ideaTitle">Idea Title:</label>
+            <input type="text" id="ideaTitle" name="ideaTitle" required>
+
+            <label for="industry">Industry:</label>
+            <input type="text" id="industry" name="industry" required>
+
+            <label for="description">Short Description (in no more than 150 words):</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="impact">Potential Impact (Market Segment):</label>
+            <textarea id="impact" name="impact" required></textarea>
+
+            <label for="usp">Unique Selling Point (USP):</label>
+            <textarea id="usp" name="usp" required></textarea>
+
+            <label>
+                <input type="checkbox" id="consent" name="consent" required>
+                I agree to the <a href="terms_and_conditions.html" target="_blank">terms and conditions</a>.
+            </label>
+
+            <button type="submit">Submit Your Idea</button>
+        </form>
+    </div>
+
+    <script>
+        const welcomeText = document.getElementById('typingEffect');
+        const statements = [
+            "Welcome to the inaugural edition of the Startup Innovation",
+            "Contest!",
+            "",
+            "Turn your ideas into reality and shape the future",
+            "of entrepreneurship.",
+            "",
+            "Share innovative solutions, compete for prizes,",
+            "and connect with visionaries.",
+            "",
+            "Seize the chance to make your mark. Ignite creativity,",
+            "drive innovation and build a brighter tomorrow.",
+            "",
+            "Join us."
+        ];
+        let statementIndex = 0;
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (statementIndex < statements.length) {
+                if (charIndex < statements[statementIndex].length) {
+                    if (statements[statementIndex].charAt(charIndex) === ' ') {
+                        welcomeText.innerHTML += '&nbsp;'; // Non-breaking space for correct formatting
+                    } else {
+                        welcomeText.innerHTML += statements[statementIndex].charAt(charIndex);
+                    }
+                    charIndex++;
+                    setTimeout(typeWriter, 10); // Adjust typing speed (milliseconds)
+                } else {
+                    welcomeText.innerHTML += '<br>'; // Add paragraph break
+                    statementIndex++;
+                    charIndex = 0;
+                    setTimeout(typeWriter, 200); // Delay before typing the next statement (milliseconds)
+                }
+            }
+        }
+
+        typeWriter();
+    </script>
+</body>
+</html>
