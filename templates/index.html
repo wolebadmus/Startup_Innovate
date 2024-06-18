@@ -4,142 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Idea Contest</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        body {
-            background-image: url('/static/background.jpg'); /* Replace 'background.jpg' with the path to your image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            font-family: Arial, sans-serif;
-        }        
-        .logo {
-            width: 300px; /* Adjust the width as needed */
-            height: auto;
-            position: absolute;
-            top: 60px;
-            left: 40px;
-        }
-        .container {
-            position: relative;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            border-radius: 10px;
-            margin-left: 60px;
-            margin-right: auto;
-            max-right: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            font-family: 'Courier Prime', monospace;
-            color: #000000;
-        }
-        .left-content {
-            position: absolute;
-            text-align: auto;
-            width: 300px;
-            top: 260px;
-            left: 80px;
-            color: white;
-            word-spacing: 5px;
-            line-height: 1.5;
-            font-family: 'Courier Prime', monospace;
-            font-size: 18px;
-        }
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 5px; /* Add spacing between input fields and dropdown */
-            z-index: 999; /* Ensure dropdown appears above other elements */
-            font-family: 'Courier Prime', monospace
-        }
-            label {
-            display: block;
-            margin-bottom: 0px; /* Add spacing between labels */
-        }
-        footer {
-            padding: 20px;
-            text-align: auto;
-            color: white;
-            position: absolute;
-            bottom: 0;
-            left: 80px;
-            width: 100%;
-            font-family: 'Courier Prime', monospace;
-        }
-        #description {
-            height: 100px; /* Adjust the height as needed */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
-    <header>
+        <img src="static/logo.png" alt="Logo" class="logo">
+    </header>
     
-    <div class="left-content">
-        <p><span id="typingEffect"></span></p>
-    </div>  
+    <div class="main-content">
+        <div class="left-content">
+            <p><span id="typingEffect"></span></p>
+        </div>  
     
-    <div class="container">
-        <h1>Startup Innovation Contest</h1>
-        <p style="font-size: 20px";><b>Your chance to win up to N500,000</b></p>
-        <form id="submissionForm">
-            <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullName" required>
+        <div class="container">
+            <h1>Startup Innovation Contest</h1>
+            <p style="font-size: 18px; color: #555;">In collaboration with University Baptist Church</p>
+            <p style="font-size: 20px;"><b>Your chance to win up to N500,000</b></p>
+            <form id="submissionForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
 
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="ideaTitle">Idea Title:</label>
-            <input type="text" id="ideaTitle" name="ideaTitle" required>
+                <label for="ideaTitle">Idea Title:</label>
+                <input type="text" id="ideaTitle" name="ideaTitle" required>
 
-            <label for="industry">Industry:</label>
-            <select id="industry" name="industry" required>
-                <option value="" disabled selected>Select an industry</option>
-                <option value="Technology">Technology</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Finance">Finance</option>
-                <option value="Manufacturing">Manufacturing</option>
-                <option value="Retail">Retail</option>
-                <option value="Education">Education</option>
-                <option value="Transportation">Transportation</option>
-                <option value="Energy">Energy</option>
-                <option value="Agriculture">Agriculture</option>
-                <option value="Telecommunication">Telecommunication</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Construction">Construction</option>
-                <option value="Hospitality">Hospitality</option>
-                <option value="Automotive">Automotive</option>
-                <option value="Aerospace">Aerospace</option>
-                <option value="Biotechnology">Biotechnology</option>
-                <option value="Insurance">Insurance</option>
-                <option value="E-commerce">E-commerce</option>
-                <option value="Others">Other</option>
-            <select>
-            
-            <label for="description">Short Description (in no more than 150 words):</label>
-            <input type="text" id="description" name="description" maxlength="150" height="100px" required>
+                <label for="industry">Industry:</label>
+                <select id="industry" name="industry" required>
+                    <option value="" disabled selected>Select an industry</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Education">Education</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Energy">Energy</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="Telecommunication">Telecommunication</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Hospitality">Hospitality</option>
+                    <option value="Automotive">Automotive</option>
+                    <option value="Aerospace">Aerospace</option>
+                    <option value="Biotechnology">Biotechnology</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="E-commerce">E-commerce</option>
+                    <option value="Others">Others</option>
+                </select>
+                
+                <label for="description">Short Description (in no more than 150 words):</label>
+                <textarea id="description" name="description" required></textarea>
+                
+                <label for="impact">Potential Impact (Market Segment):</label>
+                <input type="text" id="impact" name="impact" required>
 
-            <label for="impact">Potential Impact (Market Segment):</label>
-            <input type="text" id="impact" name="impact" required>
+                <label for="usp">Unique Selling Point (USP):</label>
+                <input type="text" id="usp" name="usp" required>
 
-            <label for="usp">Unique Selling Point (USP):</label>
-            <input type="text" id="usp" name="usp" required>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">I agree to the <a href="terms_and_conditions.html" target="_blank">terms and conditions</a>.</label>
+                </div>
 
-            <label>
-                <input type="checkbox" id="consent" name="consent" required>
-                I agree to the <a href="terms_and_conditions.html" target="_blank">terms and conditions</a>.
-            </label>
-
-            <button type="submit">Submit Your Idea</button>
-        </form>
+                <button type="submit">Submit Your Idea</button>
+            </form>
+        </div>
+        
+        <div class="sidebar">
+            <h2 onclick="toggleSection('eligibility-list')">Who Is Eligible?</h2>
+            <ul id="eligibility-list">
+                <li>Participants must be at least 18 years old.</li>
+                <li>Participants must be residents of the specified country/region.</li>
+                <li>Participants must not be employees or immediate family members of the organizers.</li>
+                <li>Participants must have a unique and innovative idea that addresses a specific problem or market need.</li>
+            </ul>
+            <h2 onclick="toggleSection('process-list')">Application Process</h2>
+            <ul id="process-list">
+                <li>Fill out the application form with your full name, email address, and idea details.</li>
+                <li>Describe your idea in no more than 150 words, highlighting its uniqueness and potential impact.</li>
+                <li>Agree to the terms and conditions and submit your application.</li>
+                <li>Wait for a confirmation email with further instructions.</li>
+            </ul>
+            <h2 onclick="toggleSection('contact-list')">Have Questions?</h2>
+            <ul id="contact-list">
+                <li>Email: support@startupcontest.com</li>
+                <li>Phone: +123-456-7890</li>
+            </ul>
+        </div>
     </div>
-    
+
     <footer>
         <p>&copy; 2024 Aso Rock. All rights reserved.</p>
     </footer>
     
+    <script src="script.js"></script>
     <script>
         const welcomeText = document.getElementById('typingEffect');
         const statements = [
@@ -169,7 +129,7 @@
                         welcomeText.innerHTML += statements[statementIndex].charAt(charIndex);
                     }
                     charIndex++;
-                    setTimeout(typeWriter, 10); // Adjust typing speed (milliseconds)
+                    setTimeout(typeWriter, 30); // Adjust typing speed (milliseconds)
                 } else {
                     welcomeText.innerHTML += '<br>'; // Add paragraph break
                     statementIndex++;
