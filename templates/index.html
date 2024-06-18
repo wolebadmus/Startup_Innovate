@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Idea Contest</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <img src="static/logo.png" alt="Logo" class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
     </header>
     
     <div class="main-content">
@@ -73,21 +73,21 @@
         </div>
         
         <div class="sidebar">
-            <h2 onclick="toggleSection('eligibility-list')">Who Is Eligible?</h2>
+            <h2 onclick="toggleSection('eligibility-list')">Who Is Eligible? <span class="arrow">&#9662;</span></h2>
             <ul id="eligibility-list">
                 <li>Participants must be at least 18 years old.</li>
                 <li>Participants must be residents of the specified country/region.</li>
                 <li>Participants must not be employees or immediate family members of the organizers.</li>
                 <li>Participants must have a unique and innovative idea that addresses a specific problem or market need.</li>
             </ul>
-            <h2 onclick="toggleSection('process-list')">Application Process</h2>
+            <h2 onclick="toggleSection('process-list')">Application Process <span class="arrow">&#9662;</span></h2>
             <ul id="process-list">
                 <li>Fill out the application form with your full name, email address, and idea details.</li>
                 <li>Describe your idea in no more than 150 words, highlighting its uniqueness and potential impact.</li>
                 <li>Agree to the terms and conditions and submit your application.</li>
                 <li>Wait for a confirmation email with further instructions.</li>
             </ul>
-            <h2 onclick="toggleSection('contact-list')">Have Questions?</h2>
+            <h2 onclick="toggleSection('contact-list')">Have Questions? <span class="arrow">&#9662;</span></h2>
             <ul id="contact-list">
                 <li>Email: support@startupcontest.com</li>
                 <li>Phone: +123-456-7890</li>
@@ -99,7 +99,6 @@
         <p>&copy; 2024 Aso Rock. All rights reserved.</p>
     </footer>
     
-    <script src="script.js"></script>
     <script>
         const welcomeText = document.getElementById('typingEffect');
         const statements = [

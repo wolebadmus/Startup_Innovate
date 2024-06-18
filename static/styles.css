@@ -36,6 +36,7 @@ header {
     width: 100%;
     box-sizing: border-box;
     margin-top: 50px; /* Space for the header */
+    
 }
 
 .left-content {
@@ -72,12 +73,16 @@ header {
     margin-top: 200px;
     display: flex;
     flex-direction: column;
+    
 }
 
 .sidebar h2 {
     color: white; /* Ensure the text color is white */
     margin-bottom: 10px; /* Add space below the heading */
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sidebar ul {
@@ -103,6 +108,10 @@ header {
 
 .sidebar a:hover {
     text-decoration: none;
+}
+
+.arrow {
+        margin-left: 10px;
 }
 
 select, input, textarea {

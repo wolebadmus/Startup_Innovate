@@ -1,15 +1,16 @@
-// Function to toggle the visibility of sections
 function toggleSection(id) {
     const element = document.getElementById(id);
+    const arrow = element.previousElementSibling.querySelector('.arrow');
     if (element.classList.contains('expanded')) {
         element.classList.remove('expanded');
+        arrow.innerHTML = '&#9662;'; // Down arrow
     } else {
         element.classList.add('expanded');
+        arrow.innerHTML = '&#9652;'; // Up arrow
     }
 }
 
-// Function to handle the typewriter effect
-function typeWriter() {
+document.addEventListener("DOMContentLoaded", function() {
     const welcomeText = document.getElementById('typingEffect');
     const statements = [
         "Welcome to the inaugural edition of the Startup Innovation",
@@ -29,7 +30,7 @@ function typeWriter() {
     let statementIndex = 0;
     let charIndex = 0;
 
-    function type() {
+    function typeWriter() {
         if (statementIndex < statements.length) {
             if (charIndex < statements[statementIndex].length) {
                 if (statements[statementIndex].charAt(charIndex) === ' ') {
@@ -38,18 +39,15 @@ function typeWriter() {
                     welcomeText.innerHTML += statements[statementIndex].charAt(charIndex);
                 }
                 charIndex++;
-                setTimeout(type, 30); // Adjust typing speed (milliseconds)
+                setTimeout(typeWriter, 30); // Adjust typing speed (milliseconds)
             } else {
                 welcomeText.innerHTML += '<br>'; // Add paragraph break
                 statementIndex++;
                 charIndex = 0;
-                setTimeout(type, 200); // Delay before typing the next statement (milliseconds)
+                setTimeout(typeWriter, 200); // Delay before typing the next statement (milliseconds)
             }
         }
     }
 
-    type();
-}
-
-// Initialize typewriter effect on page load
-document.addEventListener("DOMContentLoaded", typeWriter);
+    typeWriter();
+});
