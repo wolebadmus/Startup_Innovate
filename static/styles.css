@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier Prime', monospace;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -65,8 +65,8 @@ header {
 
 .sidebar {
     width: 200px;
-    padding: 0px;
-    font-family: 'Courier Prime', monospace;
+    font-family: inherit;
+    font-weight: normal;
     color: white;
     text-align: left;
     margin-right: 200px;
@@ -98,12 +98,6 @@ header {
 .sidebar li {
     margin-bottom: 10px;
     color: #FFAE42; /* Ensure the link color is #FFAE42 */
-}
-
-.sidebar a {
-    color: #FFAE42 !important;
-    font-size: 18px;
-    margin-bottom: 100px;
 }
 
 .sidebar a:hover {

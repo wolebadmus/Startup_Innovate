@@ -1,16 +1,16 @@
-function toggleSection(id) {
-    const element = document.getElementById(id);
-    const arrow = element.previousElementSibling.querySelector('.arrow');
-    if (element.classList.contains('expanded')) {
-        element.classList.remove('expanded');
-        arrow.innerHTML = '&#9662;'; // Down arrow
-    } else {
-        element.classList.add('expanded');
-        arrow.innerHTML = '&#9652;'; // Up arrow
-    }
-}
-
 document.addEventListener("DOMContentLoaded", function() {
+    function toggleSection(id) {
+        const element = document.getElementById(id);
+        const arrow = element.previousElementSibling.querySelector('.arrow');
+        if (element.classList.contains('expanded')) {
+            element.classList.remove('expanded');
+            arrow.innerHTML = '&#9662;'; // Down arrow
+        } else {
+            element.classList.add('expanded');
+            arrow.innerHTML = '&#9652;'; // Up arrow
+        }
+    }
+
     const welcomeText = document.getElementById('typingEffect');
     const statements = [
         "Welcome to the inaugural edition of the Startup Innovation",
