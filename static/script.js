@@ -15,3 +15,4 @@ document.getElementById('submissionForm').addEventListener('submit', async funct
         alert('There was an error submitting your idea. Please try again.');
     }
 });
+
