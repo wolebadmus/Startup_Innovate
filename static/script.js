@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Function to initialize the typing effect
     const welcomeText = document.getElementById('typingEffect');
     const statements = [
         "Welcome to the inaugural edition of the Startup Innovation",
@@ -49,5 +50,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Call the typeWriter function to start the typing effect
     typeWriter();
+
+    // Event delegation for toggling sections
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.addEventListener('click', function(event) {
+        if (event.target.classList.contains('arrow')) {
+            const sectionId = event.target.parentElement.nextElementSibling.id;
+            toggleSection(sectionId);
+        }
+    });
 });
