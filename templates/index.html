@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Idea Contest</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+     <!-- <link rel="stylesheet" href="../static/styles.css"> -->
     <script>
         // JavaScript to display an alert based on query parameters
         document.addEventListener('DOMContentLoaded', function() {
@@ -19,7 +20,10 @@
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            <!-- <img src="../static/logo.png" alt=""> -->
+        </div>
     </header>
     
     <div class="main-content">
@@ -86,30 +90,33 @@
         <div class="sidebar">
             <h2 onclick="toggleSection('eligibility-list')">Who Is Eligible? <span class="arrow">&#9662;</span></h2>
             <ul id="eligibility-list">
-                <li>Minimum academic qualification level must be from 300 level and up</li>
-                <li>Participants can be an individual or as part of a team.</li>
-                <li>If entering as a team, the team members must all meet eligibility criteria.</li>
-                <li>Participants must submit a unique and innovative idea that addresses a specific problem or market need.</li>
-                <li>Ideas must be original and only one entry is allowed for each participant.</li>
+                <li>Participants must be at least 18 years old.</li>
+                <li>Participants must be residents of the specified country/region.</li>
+                <li>Participants must not be employees or immediate family members of the organizers.</li>
+                <li>Participants must have a unique and innovative idea that addresses a specific problem or market need.</li>
             </ul>
             <h2 onclick="toggleSection('process-list')">Application Process <span class="arrow">&#9662;</span></h2>
             <ul id="process-list">
-                <li>Initial screening after submission of application.</li>
-                <li>Unique and success ideas will be invited for a more elaborate panel interview and presentation.</li>
-                <li>Pitch event and final evaluation.</li>
-                <li>Announcement of winners - #s of winners to be TBD.</li>
-                <li>Mentorship and incubation with the winner/s</li>
+                <li>Fill out the application form with your full name, email address, and idea details.</li>
+                <li>Describe your idea in no more than 150 words, highlighting its uniqueness and potential impact.</li>
+                <li>Agree to the terms and conditions and submit your application.</li>
+                <li>Wait for a confirmation email with further instructions.</li>
             </ul>
             <h2 onclick="toggleSection('contact-list')">Have Questions? <span class="arrow">&#9662;</span></h2>
             <ul id="contact-list">
-                <li>Email: theacademist247@gmail.com</li>
-                <li>WhatsApp: +1 832 786 1455</li>
+                <li>Email: support@startupcontest.com</li>
+                <li>Phone: +123-456-7890</li>
             </ul>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Aso Rock. All rights reserved.</p>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="terms_and_condition.html">Terms and Condition</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Academist. All rights reserved.</p>
     </footer>
 
     <script src="../static/script.js"></script>
