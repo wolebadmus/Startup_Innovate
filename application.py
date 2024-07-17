@@ -3,19 +3,19 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from sheets import append_row
 import os
 
-app = Flask(__name__)
-app.secret_key = os.getenv('FLASK_SECRET_KEY', 'default_key_for_development')  # Use a default key for development
+application = Flask(__name__)
+application.secret_key = os.getenv('FLASK_SECRET_KEY', 'default_key_for_development')  # Use a default key for development
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/terms_and_conditions.html')
+@application.route('/terms_and_conditions.html')
 def terms_and_conditions():
     return render_template('terms_and_condition.html')
 
-@app.route('/submit', methods=['POST'])
+@application.route('/submit', methods=['POST'])
 def submit():
     full_name = request.form['fullName']
     email = request.form['email']
@@ -40,4 +40,4 @@ def submit():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    application.run(host='0.0.0.0', port=5000)
