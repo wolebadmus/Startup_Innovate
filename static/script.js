@@ -61,4 +61,22 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleSection(sectionId);
         }
     });
+
+    // Word count functionality
+    const descriptionField = document.getElementById('description');
+    const wordCountMessage = document.getElementById('word-count-message');
+    const maxWords = 150;
+
+    descriptionField.addEventListener('input', function(event) {
+        let words = descriptionField.value.trim().split(/\s+/);
+        if (words.length > maxWords) {
+            words = words.slice(0, maxWords);
+            descriptionField.value = words.join(' ');
+            wordCountMessage.textContent = `You have reached the ${maxWords} words limit.`;
+            wordCountMessage.style.color = 'red';
+        } else {
+            wordCountMessage.textContent = `Current word count: ${words.length}`;
+            wordCountMessage.style.color = 'green';
+        }
+    });
 });
