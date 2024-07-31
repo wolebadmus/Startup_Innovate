@@ -6,17 +6,6 @@
     <title>Startup Idea Contest</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
      <!-- <link rel="stylesheet" href="../static/styles.css"> -->
-    <script>
-        // JavaScript to display an alert based on query parameters
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('success')) {
-                alert('Your idea has been submitted successfully!');
-            } else if (urlParams.has('error')) {
-                alert('There was an error submitting your idea. Please try again.');
-            }
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -35,7 +24,7 @@
             <h1>Startup Innovation Contest</h1>
             <p style="font-size: 18px; color: #555;">In collaboration with University Baptist Church, Ogbomoso</p>
             <p style="font-size: 20px;"><b>Your chance to win up to N500,000</b></p>
-            <form name="submit-to-flask" action="https://script.google.com/macros/s/AKfycbyvigmiK16DlKP-wJIoKLBJxIZMpb4gzaKYGeblo69QkqcjmdYDgBETZ2U0O3_THll3jQ/exec" method="POST">
+            <form id="myform" action="https://script.google.com/macros/s/AKfycbyvigmiK16DlKP-wJIoKLBJxIZMpb4gzaKYGeblo69QkqcjmdYDgBETZ2U0O3_THll3jQ/exec" method="POST">
                 <label for="fullName">Full Name:</label>
                 <input type="text" id="fullName" name="fullName" required>
 
