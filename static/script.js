@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
         "Seize the chance to make your mark. Ignite creativity,",
         "drive innovation and build a brighter tomorrow.",
         "",
+        "",
+        "Application is open from Aug. 1 through Aug. 21, 2024 GMT
+        "",
         "Join us."
     ];
     let statementIndex = 0;
