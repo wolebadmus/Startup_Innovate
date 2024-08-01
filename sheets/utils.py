@@ -1,20 +1,12 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import os
 
-# Load credentials from the key file
-creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json')
-
-# Authenticate with gspread
-client = gspread.authorize(creds)
-
-# Extract the sheet ID from the URL
-# url = 'https://docs.google.com/spreadsheets/d/1eYejJ1ywhqlTF1KIGGmTTAzpwD6TuyvBPSqdsfHHCsA/edit?gid=0#gid=0'
-# sheet_id = url.split('/')[-2]
-
-# Open the sheet by its ID
-sheet = client.open_by_key("1eYejJ1ywhqlTF1KIGGmTTAzpwD6TuyvBPSqdsfHHCsA").sheet1
-
-# data = sheet.get_all_records()
-def  append_row(data):
+def append_row(data, BASE_PATH):
+    json_file = os.path.join(BASE_PATH, 'client_secret.json')
+    print("CLient Secret ", json_file)
+    creds = ServiceAccountCredentials.from_json_keyfile_name(json_file)
+    client = gspread.authorize(creds)
+    sheet = client.open_by_key("1eYejJ1ywhqlTF1KIGGmTTAzpwD6TuyvBPSqdsfHHCsA").sheet1
     sheet.append_row(data)
     return True

@@ -6,6 +6,8 @@ import os
 application = Flask(__name__)
 application.secret_key = os.getenv('FLASK_SECRET_KEY', 'default_key_for_development')  # Use a default key for development
 
+BASE_PATH = application.root_path
+
 @application.route('/')
 def index():
     return render_template('index.html')
@@ -30,14 +32,14 @@ def submit():
     
  #    Append data to Google Sheets
     try:
-        append_row(data)
+        append_row(data, BASE_PATH)
  #        flash('Your idea has been submitted successfully!')
     except Exception as e:
- #        flash(f'There was an error submitting your idea: {e}')
+        print(f"ERROR {e}")
         return redirect(url_for('index', error=True))
     
     return redirect(url_for('index', success=True))
 
 
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', port=5000)
+    application.run(host='0.0.0.0', port=9000)
