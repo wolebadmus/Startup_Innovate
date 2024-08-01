@@ -254,3 +254,17 @@ footer{
   word-wrap: anywhere;
 }
 }
+@media screen and (max-width: 480px) {
+    .left-content {
+        font-size: 12px;
+    }
+
+    .container, .sidebar {
+        max-width: 100%;
+    }
+
+    .logo img {
+        max-width: 150px;
+    }
+}
+}
