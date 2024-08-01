@@ -26,7 +26,7 @@ def submit():
     usp = request.form['usp']
     
  #    Prepare data to append
-     data = [full_name, email, idea_title, industry, description, impact, usp]
+    data = [full_name, email, idea_title, industry, description, impact, usp]
     
  #    Append data to Google Sheets
     try:
