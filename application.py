@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-import sheets  # Import the sheets module
+#import sheets  # Import the sheets module
 from sheets import append_row
 import os
 
@@ -25,15 +25,15 @@ def submit():
     impact = request.form['impact']
     usp = request.form['usp']
     
-     Prepare data to append
+ #    Prepare data to append
      data = [full_name, email, idea_title, industry, description, impact, usp]
     
-     Append data to Google Sheets
+ #    Append data to Google Sheets
     try:
         append_row(data)
-         flash('Your idea has been submitted successfully!')
+ #        flash('Your idea has been submitted successfully!')
     except Exception as e:
-         flash(f'There was an error submitting your idea: {e}')
+ #        flash(f'There was an error submitting your idea: {e}')
         return redirect(url_for('index', error=True))
     
     return redirect(url_for('index', success=True))
