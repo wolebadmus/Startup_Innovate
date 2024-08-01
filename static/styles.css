@@ -37,7 +37,7 @@ body {
     justify-content: space-between;
     align-items: flex-start; /* Align items to the top */
     width: 100%;
-    margin-top: 20px; /* Space for the header */
+    margin-top: 60px; /* Space for the header */
     margin-bottom: 50px;
 
 }
