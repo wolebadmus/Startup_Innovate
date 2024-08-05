@@ -34,25 +34,24 @@ def submit():
  #    Append data to Google Sheets
     try:
         url = "https://script.google.com/macros/s/AKfycbwY5lLQ5CmivUW7-n7SRuCZDvKH4IJWVhop9i1bP03tnrTshWR0PkXYEBUzCQnSfKiBYw/exec"
+       
+        payload = {
+            "fullName": data[0],
+            "email": data[1],
+            "ideaTitle": data[2],
+            "industry": data[3],
+            "description": data[4],
+            "impact": data[5],
+            "usp": data[6]       
+        }
 
-   
-    payload = {
-        "fullName": data[0],
-        "email": data[1],
-        "ideaTitle": data[2],
-        "industry": data[3],
-        "description": data[4],
-        "impact": data[5],
-        "usp": data[6],
-        "consent": data[7]
-    }
-
-    response = requests.post(url, data=payload)
+        response = requests.post(url, data=payload)
    
 
         
  #       append_row(data, BASE_PATH)
  #        flash('Your idea has been submitted successfully!')
+        return redirect(url_for('success'))
     except Exception as e:
         print(f"ERROR {e}")
         return redirect(url_for('index', error=True))
