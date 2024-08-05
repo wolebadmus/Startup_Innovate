@@ -33,7 +33,7 @@ def submit():
     
  #    Append data to Google Sheets
     try:
-        url = "https://script.google.com/macros/s/AKfycbwY5lLQ5CmivUW7-n7SRuCZDvKH4IJWVhop9i1bP03tnrTshWR0PkXYEBUzCQnSfKiBYw/exec"
+        url = "https://script.google.com/macros/s/AKfycbxnGQTd39TFdhr6KgpXUCMVUIvQpeHrDe1eLYsxOAOYJFCY-8PdDWCIU8Tb_afi0gtw9Q/exec"
        
         payload = {
             "fullName": data[0],
