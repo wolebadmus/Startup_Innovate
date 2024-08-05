@@ -50,7 +50,7 @@ def submit():
 
         
  #       append_row(data, BASE_PATH)
-         flash('Your idea has been submitted successfully!')
+ #        flash('Your idea has been submitted successfully!')
  #       return redirect(url_for('success'))
     except Exception as e:
         print(f"ERROR {e}")
